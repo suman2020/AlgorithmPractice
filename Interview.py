@@ -182,3 +182,62 @@ def rotateMatrix(tDAr):
     return tDAr;
 
 print(rotateMatrix(tDAr))
+matrix = np.array([[1,2,3],[4,5,6],[7,8,9]])
+copy_matrix = np.copy(matrix)
+
+def matrixRotation(matrix):
+    for i in range(0, len(matrix)):
+        for j in range(i,len(matrix)):
+            temp = matrix[i][j]
+            matrix[i][j] = matrix[j][i]
+            matrix[j][i] = temp
+
+            # matrix now becomes
+            """
+            `1 2 3 a            1 4 7 d
+             4 5 6 b  ---->     2 5 8 e
+             7 8 9 c            3 6 9 f
+             d e f g            a b c g
+             we need to get
+             d 7 4 1
+             e 8 5 2
+             f 9 6 3
+             g c b a
+             THis can be obtained by reversing the matrix
+            """
+
+
+    for i in range(0, len(matrix)):
+        start = 0
+        end = len(matrix)-1
+        while start < end:
+            temp = matrix[i][start]
+            matrix[i][start] = matrix[i][end]
+            matrix[i][end] = temp
+            start+=1
+            end-=1
+
+            """
+            if we want to reverse in anticlock wise direction
+                for i in range(0, len(matrix)):
+                    start = 0
+                    end = len(matrix)-1
+                    while start < end:
+                        temp = matrix[start][i]
+                        matrix[start][i] = matrix[end][i]
+                        matrix[end][i] = temp
+                        start+=1
+                        end-=1
+                        
+            The matrix will now be;
+            4 8 12 16
+            3 7 11 15
+            2 6 10 14
+            1 5  9 13
+            """
+
+    print(matrix)
+
+matrixRotation(matrix)
+
+
