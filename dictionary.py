@@ -45,6 +45,8 @@ mfd['age'] = 38
 print(mfd['age'])
 # adding a new element
 mfd['wiffe'] = 'Albina'
+# adding multiple elements
+mfd.update({'focus':'family','children':2,'siblings':'1'})
 print(mfd)
 
 # time complexity of insertion of element = O(1) and space complexity is : amortized O(1)
@@ -88,3 +90,28 @@ suman = searchDict(mfd,'Albina')
 print(type(suman))
 # if the value is same for two different keys, then while retruning its gonna return the first key
 # time complexity is: O(n) and space complexity is: O(1)
+
+"""
+Delete/Remove an element from the dictionary
+"""
+# removing using pop() method that takes key as an parameter and this method returns the corresponding value
+name = mfd.pop('wiffe')
+print(name)
+print(mfd)
+
+# using popitem() method removes any random item in the dictionary and returns the key value pair in the form of tuple
+items = mfd.popitem()
+print(items, type(items))
+print(mfd)
+
+# using clear() method empties the dictionar
+# mfd.clear()
+# print(mfd)
+
+# using del() method
+del mfd['name']
+print(mfd)
+del mfd #can delete the entire dictionary as well.
+print(mfd)
+
+# time complexity is generally : O(1) but in some cases it might take longer time to delete so we hace time complexity as : amortized O(n) and space complexity O(1)
