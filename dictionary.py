@@ -1,3 +1,16 @@
+"""
+Dictionary                                      List
+______________________________________________________________
+Unordered                                       Ordered
+Access via keys                                 Access via index
+Collection of key value pairs                   Collection of elements
+Preffered when you have unique key values       preffered when you have ordered data
+no duplicate members                            alloe duplicate members
+
+"""
+
+
+
 # Dictionary
 # it is a collection which is unordered, changeable and indexed
 
@@ -6,7 +19,7 @@
 myDict = dict()
 secondDict = { }
 
-myDict = {1:'one',2:'dos',3:'tres',4:'quadro'}
+myDict = {1:'one',2:'dos',3:'tres',4:'quadro',5:'quadro'}
 print(myDict)
 print(myDict[4])
 
